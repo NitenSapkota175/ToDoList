@@ -1,0 +1,34 @@
+{%extends 'base/main.html' %}
+{%block content %}
+<div class="header-bar">
+    <h1>Register</h1>
+</div>
+<div class="card-body">
+    <form method = "POST" action="">
+        {%csrf_token%}
+        {{form.as_p}}
+        <label>
+            {{form.username.lable}}
+            
+        </label>
+        {{form.username}}
+
+        <label>
+            {{form.password1.lable}}
+            
+        </label>
+        {{form.password1}}
+
+        <label>
+            {{form.password2.lable}}
+            
+        </label>
+        {{form.password2}}
+        <input class = "button" style = "margin-top: 10px;" name = 'Register' type = 'submit' />
+    </form>
+    
+    <p>Already have an account ? <a href = "{%url 'login' %}">Login</a></p>
+</div>
+
+
+{%endblock content%}
